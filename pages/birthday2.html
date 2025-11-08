@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday page</title>
+    <link rel="stylesheet" href="../public/CSS/birthday2.css">
+    <link rel="icon"  href="../images/birthday.png">
+
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="../public/CSS/navbar.css">
+
+</head>
+
+<body>
+
+
+    <div id="navbar"></div>
+    <div id="page">
+
+        <div class="left-page">
+            <div class="container">
+                <div class="left-text">
+                    <div class="title">
+                        <h1>Happy </h1>
+                        <span>Birthday</span>
+                    </div>
+                    <div class="btn btn-date">
+                        <a href=""> 15 November 2002</a>
+                    </div>
+                    <div class="mail">
+                           <a href="" >Cliquer içi Houda</a> 
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right-page">
+            <div class="container">
+                <div class="right">
+                     <div class="img-page">
+                    <img src="../images/houda2.jpg" alt="">
+                </div>
+                <div class="btn btn-underimage">
+                    <a href=""> Chère Houda</a>
+
+                </div>
+                </div>
+               
+
+
+            </div>
+        </div>
+
+
+
+         <div class="boxMail">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="../images/houda2.jpg" alt="">
+                    </div>
+                    <h4 class="username">To: Houda 💖<span class="underline"></span></h4>
+
+                    <h3>Happy Birthday</h3>
+                    
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <h3>To You!</h3>
+                        <h2> صديقتي العزيزة،
+اليوم كنحتفل بيك وفرحان بزاف حيث عندي صديقة رائعة بحالك! شكراً على كل اللحظات الجميلة اللي قضيناها مع بعضنا، على الضحك اللي  ما كيساليش، وعلى دعمك ووفائك. كل مرة كنكون معاك، كنحس بالراحة والفرحة، وكتولّي الأيام صافية أكثر 😄.
+
+نتمنى ليك هاد السنة تكون عامرة بالنجاحات، السعادة، وكل حاجة كتمنيها من قلبك. خلي الابتسامة ديالك ديما معاك، وعيشي كل يوم بالفرح والحماس، وحتى فالأوقات الصعبة، عرفي أنني ديما هنا باش نسمع ليك وندعمك 🤗.
+
+عيد ميلاد سعيد هدى 🎈🎂🎈
+كتستاهلي كل الخير فهاد الدنيا وبزاف ديال الضحك واللحظات الممتعة!</h2>
+                        
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+ // اختيار العناصر
+let mailBox = document.querySelector('.mail a'); // الرابط داخل .mail
+let boxMail = document.querySelector('.boxMail');
+let closeBtn = boxMail.querySelector('.fa-xmark');
+
+// fadeIn animation CSS لازم تكون موجودة
+// مثال CSS:
+/*
+.fadeIn {
+    opacity: 0;
+    animation: fadeInAnim 0.7s forwards;
+}
+
+@keyframes fadeInAnim {
+    to {
+        opacity: 1;
+    }
+}
+*/
+
+// عند الضغط على "Click Here Houda"
+mailBox.addEventListener('click', function(e) {
+    e.preventDefault(); // مهم باش الرابط ما يحملش الصفحة
+
+    // Toggle class 'active' على الزر (اختياري للستايل)
+    mailBox.parentElement.classList.toggle('active');
+
+    // عرض صندوق الرسالة مع animation
+    boxMail.classList.add('active');
+
+    // animation للبطاقات
+    let card1 = boxMail.querySelector('.card1');
+    let card2 = boxMail.querySelector('.card2');
+
+    card1.classList.add('fadeIn');
+    setTimeout(() => {
+        card2.classList.add('fadeIn');
+    }, 500); // البطاقة الثانية تبان شوية من بعد
+});
+
+// إغلاق الصندوق
+closeBtn.addEventListener('click', function() {
+    boxMail.classList.remove('active');
+
+    // نحيد الأنيميشن ديال البطاقات باش يرجعو ليهم استعداد للفتح من جديد
+    let card1 = boxMail.querySelector('.card1');
+    let card2 = boxMail.querySelector('.card2');
+
+    card1.classList.remove('fadeIn');
+    card2.classList.remove('fadeIn');
+
+    // كذلك نحيد class active من الزر
+    mailBox.parentElement.classList.remove('active');
+});
+
+
+
+  fetch('pages/navbar.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('navbar').innerHTML = html);
+
+    </script>
+
+     <script src="../public/JS/navbar.js"></script>
+</body>
+
+</html>

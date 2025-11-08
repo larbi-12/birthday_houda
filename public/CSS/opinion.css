@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+.container .title {
+    color: beige;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+textarea {
+    padding: 10px;
+    width: 500px;
+    height: 60vh;
+    font-size: 24px;
+    background-color: rgb(49, 44, 44);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    resize: none;
+    box-shadow: 0 0 1.6rem transparent;
+    color: white;
+    transition: all .6s ease;
+    padding: 20px;
+}
+
+textarea:hover,
+textarea:focus {
+    border: 2px solid rgb(240, 161, 228);
+    box-shadow: 0 0 1.6rem rgb(214, 144, 220);
+}
+
+button {
+
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: rgba(222, 132, 223, 0.5);
+
+    color: white;
+    border: 2px solid transparent;
+    transition: all .6s ease;
+}
+
+button:hover {
+    background-color: rgb(214, 144, 220);
+    cursor: pointer;
+    box-shadow: 0 0 1.6rem rgb(221, 150, 207);
+}
+
+button:disabled {
+    background-color: #383636;
+    cursor: not-allowed;
+    color: white;
+    box-shadow: 0 0 1.6rem transparent;
+}
+
+/* Supprime toutes les transitions et animations pour la navbar */
+#navbar, 
+#navbar * {
+    transition: none !important;
+    animation: none !important;
+}
+
+
+
+/* === Tablettes (768px à 1024px) === */
+@media (max-width: 1024px) {
+    textarea {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .container .title {
+        font-size: 18px;
+    }
+}
+
+/* === Mobiles (moins de 768px) === */
+@media (max-width: 768px) {
+    textarea {
+        width: 90%;
+        height: 50vh;
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .container {
+        gap: 20px;
+    }
+
+    .container .title {
+        font-size: 16px;
+    }
+}

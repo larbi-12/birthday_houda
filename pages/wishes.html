@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishes</title>
+    <link rel="stylesheet" href="../public/CSS/wishes.css">
+    <link rel="stylesheet" href="../public/CSS/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon"  href="../images/wishes.png">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+    <div id="wishes">
+        <div class="container">
+            <div class="text-content">
+                <h2>Birthday Wishes</h2>
+                <p>Click each card to reveal a special wish 💫</p>
+            </div>
+
+            <div class="boxes">
+                <div class="box">
+                    <div class="front">
+                        <i class="fa-regular fa-heart"></i>
+                        <h2>Endless Love</h2>
+                        <a href="#">Tap to reveal</a>
+                    </div>
+                    <div class="back">
+                        <i class="fa-regular fa-heart"></i>
+                        <h2>Endless Love</h2>
+                        <p>May your days be filled with love, laughter, and all the happiness you deserve!</p>
+                        <a href="#">Tap to close</a>
+                    </div>
+                </div>
+
+                <!-- Répéter pour les autres boxes -->
+                <div class="box">
+                    <div class="front">
+                        <i class="fas fa-magic"></i>
+                        <h2>Dreams Come True</h2>
+                        <a href="#">Tap to reveal</a>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-magic"></i>
+                        <h2>Dreams Come True</h2>
+                        <p>May all your dreams and wishes come true this year and beyond!</p>
+                        <a href="#">Tap to close</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="front">
+                        <i class="fa-regular fa-face-surprise"></i>
+                        <h2>Surprise!</h2>
+                        <a href="#">Tap to reveal</a>
+                    </div>
+                    <div class="back">
+                        <i class="fa-regular fa-face-surprise"></i>
+                        <h2>Surprise!</h2>
+                        <p>Here is the hidden content ❤️</p>
+                        <a href="#">Tap to close</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="front">
+                        <i class="fa-solid fa-gift"></i>
+                        <h2>Beautiful Surprises</h2>
+                        <a href="#">Tap to reveal</a>
+                    </div>
+                    <div class="back">
+                        <i class="fa-solid fa-gift"></i>
+                        <h2>Beautiful Surprises</h2>
+                        <p>May life surprise you with joy, adventure, and wonderful moments!</p>
+                        <a href="#">Tap to close</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        // const boxes = document.querySelectorAll('.box');
+
+        // boxes.forEach(box => {
+        //     box.addEventListener('click', () => {
+        //         box.classList.toggle('flipped'); // flip au clic
+        //     });
+        // });
+
+
+const boxes = document.querySelectorAll('.box');
+let flippedBox = null; // garde la box actuellement flip
+
+boxes.forEach(box => {
+    box.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // si une autre box est déjà flip, la remettre à sa position initiale
+        if (flippedBox && flippedBox !== box) {
+            flippedBox.classList.remove('flipped');
+        }
+
+        // flip/collapse la box cliquée
+        box.classList.toggle('flipped');
+
+        // mettre à jour la box actuellement flip
+        flippedBox = box.classList.contains('flipped') ? box : null;
+    });
+});
+
+// clic ailleurs sur la page => toutes les boxes reviennent à l’état initial
+document.addEventListener('click', () => {
+    if (flippedBox) {
+        flippedBox.classList.remove('flipped');
+        flippedBox = null;
+    }
+});
+
+fetch('pages/navbar.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('navbar').innerHTML = html);
+
+
+    </script>
+    <script src="../public/JS/navbar.js"></script>
+</body>
+
+</html>

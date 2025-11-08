@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart </title>
+    <link rel="stylesheet" href="../public/CSS/birthday1.css">
+    <link rel="stylesheet" href="../public/CSS/navbar.css">
+    <link rel="icon"  href="../images/cart.png">
+</head>
+<body>
+    
+
+        <div id="navbar"></div>
+
+
+    <div class="container">
+        <div class="card">
+            <div class="outside">
+                <h1>Happy birthday</h1>
+                <h3> Click Here</h3>
+            </div>
+             <div class="inside">
+                <img src="images/Happy.gif" alt="">
+                <h3>عيد ميلاد سعيد صديقتي الغالية! اليوم يوم مميز بزاف،
+                     حيث تزادت فيه إنسانة طيبة، مبتسمة، وكتنشر طاقة إيجابية فكل مكان. كنتمناك سنة جديدة عامرة بالحب، الراحة، والنجاح، وتحقق فيها كل ما كتتمنّاي. تبقي ديما قوية، منوّرة، ومتفائلة كيف ما عرفتك ديما، وربي يحفظك ويسهّل ليك كل خطوة فطريقك.
+                      كنعتز بزاف بصداقتنا، وكنتمناك عمر طويل مليء بالفرح والسعادة 🤍🎉</h3>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="frames frame1">
+                <img src="../images/houda1.jpeg" alt="">
+                <p>كل عام وأنت بخير وعيد ميلادك سعيد</p>
+            </div>
+             <div class="frames frame2">
+                <img src="../images/houda2.jpg" alt="">
+                <p>أتمنى لك يومًا مليئًا بالفرح والسعادة</p>
+            </div>
+             <div class="frames frame3">
+                <img src="../images/houda4.jpg" alt="">
+                <p>كل سنة وأنت طيب، أتمنى أن يكون عامك الجديد مليئًا بالبهجة والنجاح</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('pages/navbar.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+    <script src="../public/JS/navbar.js"></script>
+    
+</body>
+</html>

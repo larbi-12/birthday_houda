@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wishes{
+    font-family: "Momo Signature", cursive;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effets de fond décoratifs */
+#wishes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+#wishes .container{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    padding: 120px 20px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.text-content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-content h2{
+    color: #e36cad;
+    font-size: 4.5em;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #e36cad, #ff6b9d, #ff8fab);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        text-shadow: 3px 3px 15px rgba(227, 108, 173, 0.3);
+    }
+}
+
+.text-content p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Container grid */
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Chaque box */
+.boxes .box {
+    width: 100%;
+    height: 320px;
+    perspective: 1200px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Flip container (front + back) */
+.box .front, .box .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* recto */
+.box .front {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #333;
+    z-index: 2;
+    border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+/* verso */
+.box .back {
+    background: linear-gradient(135deg, #ff6b9d 0%, #e36cad 100%);
+    color: white;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* classe flip */
+.box.flipped .front {
+    transform: rotateY(180deg);
+}
+.box.flipped .back {
+    transform: rotateY(0deg);
+    box-shadow: 0 15px 40px rgba(227, 108, 173, 0.4);
+}
+
+/* icône */
+.box i {
+    font-size: 70px;
+    margin-bottom: 25px;
+    position: relative;
+    animation: float 3s infinite ease-in-out;
+    background: linear-gradient(45deg, #e36cad, #ff6b9d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.back i {
+    color: white !important;
+    -webkit-text-fill-color: unset !important;
+    background: none !important;
+}
+
+/* animation de flottement */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+}
+
+/* titre */
+.box h2 {
+    margin-top: 15px;
+    font-family: "Momo Signature", cursive;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: inherit;
+}
+
+.box p{
+    margin-top: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: inherit;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+}
+
+.back p {
+    font-size: 1.2em;
+}
+
+/* lien */
+.box a {
+    font-size: 1.3em;
+    margin-top: 25px;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    transition: all 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+}
+
+.box .front a {
+    color: #e36cad;
+    border-color: #e36cad;
+}
+
+.box .back a {
+    color: white;
+    border-color: white;
+}
+
+.box a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Effet de brillance au survol */
+.box:hover .front {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Grands écrans (plus de 1400px) */
+@media (min-width: 1400px) {
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+    
+    .boxes .box {
+        height: 350px;
+    }
+}
+
+/* Tablettes (768px - 1024px) */
+@media (max-width: 1024px) {
+    #wishes .container {
+        gap: 60px;
+        padding: 100px 20px 60px;
+    }
+    
+    .text-content h2 {
+        font-size: 3.5em;
+    }
+    
+    .text-content p {
+        font-size: 1.2em;
+        max-width: 500px;
+    }
+    
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 15px;
+    }
+    
+    .boxes .box {
+        height: 300px;
+    }
+    
+    .box i {
+        font-size: 60px;
+    }
+    
+    .box h2 {
+        font-size: 2em;
+    }
+}
+
+/* Tablettes petites (768px et moins) */
+@media (max-width: 768px) {
+    #wishes .container {
+        gap: 50px;
+        padding: 80px 15px 50px;
+    }
+    
+    .text-content h2 {
+        font-size: 2.8em;
+    }
+    
+    .text-content p {
+        font-size: 1.1em;
+        max-width: 400px;
+    }
+    
+    .boxes {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 10px;
+        max-width: 500px;
+    }
+    
+    .boxes .box {
+        height: 280px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .box .front, .box .back {
+        padding: 25px;
+    }
+    
+    .box i {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
+    
+    .box h2 {
+        font-size: 1.8em;
+    }
+    
+    .box p {
+        font-size: 1em;
+    }
+    
+    .box a {
+        font-size: 1.1em;
+        margin-top: 20px;
+    }
+}
+
+/* Mobiles (480px et moins) */
+@media (max-width: 480px) {
+    #wishes .container {
+        gap: 40px;
+        padding: 70px 10px 40px;
+    }
+    
+    .text-content h2 {
+        font-size: 2.2em;
+    }
+    
+    .text-content p {
+        font-size: 1em;
+        max-width: 300px;
+    }
+    
+    .boxes {
+        gap: 20px;
+    }
+    
+    .boxes .box {
+        height: 250px;
+    }
+    
+    .box .front, .box .back {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .box i {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+    
+    .box h2 {
+        font-size: 1.6em;
+    }
+    
+    .box p {
+        font-size: 0.9em;
+        margin-top: 15px;
+    }
+    
+    .box a {
+        font-size: 1em;
+        margin-top: 15px;
+        padding: 6px 15px;
+    }
+}
+
+/* Très petits mobiles (360px et moins) */
+@media (max-width: 360px) {
+    .text-content h2 {
+        font-size: 1.8em;
+    }
+    
+    .boxes .box {
+        height: 230px;
+    }
+    
+    .box .front, .box .back {
+        padding: 15px;
+    }
+    
+    .box i {
+        font-size: 40px;
+    }
+    
+    .box h2 {
+        font-size: 1.4em;
+    }
+}
+
+/* Orientation paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    #wishes {
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    #wishes .container {
+        padding: 100px 20px 40px;
+        gap: 30px;
+    }
+    
+    .boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .boxes .box {
+        height: 220px;
+    }
+}
+
+/* Support pour les écrans très hauts */
+@media (min-height: 1000px) {
+    .boxes .box {
+        height: 380px;
+    }
+    
+    .box i {
+        font-size: 80px;
+    }
+    
+    .box h2 {
+        font-size: 2.5em;
+    }
+    
+    .box p {
+        font-size: 1.3em;
+    }
+}
+
+/* Améliorations d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .box i {
+        animation: none;
+    }
+    
+    .text-content h2 {
+        animation: none;
+    }
+    
+    .box .front, .box .back {
+        transition: none;
+    }
+    
+    .box a:hover {
+        transform: none;
+    }
+}
+
+/* Mode sombre automatique */
+@media (prefers-color-scheme: dark) {
+    #wishes {
+        background: linear-gradient(135deg, #2d1b2e 0%, #4a2c3e 50%, #6d3b52 100%);
+    }
+    
+    .text-content p {
+        color: #cccccc;
+    }
+    
+    .box .front {
+        background: linear-gradient(135deg, #3a2a3a 0%, #2d1b2e 100%);
+        color: #ffffff;
+        border-color: rgba(227, 108, 173, 0.3);
+    }
+    
+    .box .front a {
+        color: #ff8fab;
+        border-color: #ff8fab;
+    }
+}
+
+/* Effets de chargement */
+.box {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.box:nth-child(1) { animation-delay: 0.1s; }
+.box:nth-child(2) { animation-delay: 0.2s; }
+.box:nth-child(3) { animation-delay: 0.3s; }
+.box:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

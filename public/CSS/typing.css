@@ -1,0 +1,628 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body ,html{
+    overflow: hidden;
+    height: 100%;
+}
+
+.typing-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(24, 16, 17);
+    padding: 20px;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container-typing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(240, 229, 229, 0.8);
+    box-shadow: 0 0 2.5rem pink;
+    height: auto;
+    min-height: 500px;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 10;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.container-typing .content.page1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.image{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid rgb(161, 146, 146);
+    object-fit: cover;
+}
+
+.btn, .btn-final{
+    margin-top: 30px;
+    padding: 12px 40px;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    font-weight: bold;
+    transition: all .8s ease;
+    background-color: violet;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    min-width: 200px;
+}
+
+.btn:hover{
+    border: 3px solid rgb(235, 175, 13);
+    background: rgb(237, 211, 162);
+    box-shadow: 0 0 1.2rem rgb(229, 193, 127);
+    color: black;
+}
+
+.text{
+    color: black;
+    margin-top: 30px;
+    background-color: rgb(248, 190, 231);
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.text span{
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Content page2 */
+.content.page2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.content.page2 .content-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content.page2 .content-text h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content.page2 .content-text p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.imageHeart{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.imageHeart img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: all 0.6s ease;
+}
+
+.imageHeart img:hover{
+    transform: scale(1.1);
+}
+
+/* Page3 */
+.content.page3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: rgb(234, 75, 149);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+}
+
+.content.page3 .text-page3{
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.btn.btn-page3{
+    margin-top: 30px;
+    padding: 12px 40px;
+    width: auto;
+}
+
+/* Page4 */
+.content.page4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.content.page4 .text-page4{
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.content.page4 .text-page4 p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.content.page4 .input-name input{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 100px;
+    border: 2px solid rgb(252, 128, 204);
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+}
+
+.content.page4 .input-name input:focus{
+    outline: none;
+    box-shadow: 0 0 1.2rem rgb(252, 128, 204);
+}
+
+.content.page4 .btn-page4 {
+    margin-top: 30px;
+    padding: 12px 40px;
+    width: auto;
+}
+
+/* Final Page */
+.content.final-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.content.final-page .textcontent h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content.final-page .text-final-page p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+span.final-heart{
+    font-size: 32px;
+    color: red;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.content.final-page .btn-final,
+.btn-page3, 
+.btn-page4, 
+.btn{
+    margin-top: 30px;
+    padding: 12px 40px;
+    width: auto;
+}
+
+/* Sections */
+section {
+    display: none;
+    width: 100%;
+}
+
+section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animations */
+.confetti {
+    position: fixed;
+    top: -5%;
+    transition: all 0.6s ease;
+    width: 8px;
+    height: 8px;
+    background-color: #f00;
+    opacity: 0.7;
+    animation: confetti-fall 5s linear infinite;
+    z-index: 9;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    animation: floatUp 4s ease-in forwards;
+    opacity: 0.8;
+    z-index: 1001;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.firework, .firework-particle {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.firework {
+    width: 6px;
+    height: 6px;
+    background: white;
+    z-index: 2;
+}
+
+.firework-particle {
+    width: 4px;
+    height: 4px;
+    z-index: 1;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablettes (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container-typing {
+        width: 85%;
+        padding: 25px 20px;
+    }
+    
+    .image {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .content.page2 .content-text h2 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+    
+    .text {
+        max-width: 350px;
+    }
+}
+
+/* Tablettes petites (768px et moins) */
+@media (max-width: 768px) {
+    .typing-section {
+        padding: 15px;
+    }
+    
+    .container-typing {
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 25px;
+    }
+    
+    .image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .btn, .btn-final {
+        padding: 10px 30px;
+        font-size: 14px;
+        min-width: 180px;
+    }
+    
+    .text {
+        padding: 15px;
+        font-size: 14px;
+        max-width: 320px;
+    }
+    
+    .content.page2 .content-text h2 {
+        font-size: 24px;
+    }
+    
+    .content.page2 .content-text p {
+        font-size: 16px;
+    }
+    
+    .imageHeart img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .content.page3 .text-page3,
+    .content.page4 .text-page4 p,
+    .content.final-page .text-final-page p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .content.page4 .input-name input {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    span.final-heart {
+        font-size: 28px;
+    }
+}
+
+/* Mobiles (480px et moins) */
+@media (max-width: 480px) {
+    .typing-section {
+        padding: 10px;
+    }
+    
+    .container-typing {
+        width: 100%;
+        padding: 15px 10px;
+        border-radius: 20px;
+        min-height: 450px;
+    }
+    
+    .image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .btn , .btn-final{
+        padding: 8px 25px;
+        font-size: 13px;
+        min-width: 160px;
+        margin-top: 20px;
+    }
+    
+    .text {
+        padding: 12px;
+        font-size: 13px;
+        max-width: 280px;
+        margin-top: 20px;
+    }
+    
+    .content.page2 .content-text h2 {
+        font-size: 20px;
+    }
+    
+    .content.page2 .content-text p {
+        font-size: 14px;
+    }
+    
+    .imageHeart {
+        gap: 10px;
+    }
+    
+    .imageHeart img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+    
+    .content.page3 .text-page3,
+    .content.page4 .text-page4 p,
+    .content.final-page .text-final-page p {
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+    
+    .content.page4 .input-name input {
+        width: 95%;
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    span.final-heart {
+        font-size: 24px;
+    }
+    
+    .confetti {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .floating-heart {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Très petits mobiles (360px et moins) */
+@media (max-width: 360px) {
+    .container-typing {
+        padding: 12px 8px;
+    }
+    
+    .image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .btn, .btn-final {
+        padding: 7px 20px;
+        font-size: 12px;
+        min-width: 140px;
+    }
+    
+    .text {
+        max-width: 250px;
+        font-size: 12px;
+    }
+    
+    .imageHeart img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .content.page4 .input-name input {
+        font-size: 12px;
+    }
+}
+
+/* Orientation paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .typing-section {
+        padding: 10px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .container-typing {
+        min-height: 350px;
+        padding: 15px;
+    }
+    
+    .image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+    
+    .btn , .btn-final{
+        margin-top: 15px;
+        padding: 8px 20px;
+    }
+    
+    .text {
+        margin-top: 15px;
+        padding: 10px;
+    }
+    
+    .content.final-page .btn-final {
+        margin-bottom: 20px;
+    }
+}
+
+/* Support pour les écrans très hauts */
+@media (min-height: 1000px) {
+    .container-typing {
+        min-height: 600px;
+    }
+    
+    .image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .btn , .btn-final{
+        padding: 15px 50px;
+        font-size: 18px;
+    }
+}
+
+/* Améliorations d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .btn, .imageHeart img, .floating-heart, .confetti {
+        transition: none;
+        animation: none;
+    }
+    
+    span.final-heart {
+        animation: none;
+    }
+}
