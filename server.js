@@ -94,44 +94,16 @@ app.post('/track', (req, res) => {
 });
 
 // Route handlers
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/index.html'));
-});
+const routes = [
+  '/', '/navbar', '/birthday1', '/birthday2', '/gallery', 
+  '/wishes', '/welcome', '/3dGallery', '/typing', '/opinion'
+];
 
-app.get('/navbar', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/navbar.html'));
-});
-
-app.get('/birthday1', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/birthday1.html'));
-});
-
-app.get('/birthday2', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/birthday2.html'));
-});
-
-app.get('/gallery', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/gallery.html'));
-});
-
-app.get('/wishes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/wishes.html'));
-});
-
-app.get('/welcome', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/welcome.html'));
-});
-
-app.get('/3dGallery', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/3dGallery.html'));
-});
-
-app.get('/typing', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/typing.html'));
-});
-
-app.get('/opinion', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/opinion.html'));
+routes.forEach(route => {
+  app.get(route, (req, res) => {
+    const page = route === '/' ? 'index.html' : `${route.slice(1)}.html`;
+    res.sendFile(path.join(__dirname, 'pages', page));
+  });
 });
 
 // Health check endpoint
@@ -139,10 +111,9 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Start server only once
+// Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
 
-// Export for Vercel serverless functions
 module.exports = app;
