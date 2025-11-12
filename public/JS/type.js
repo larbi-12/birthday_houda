@@ -2,8 +2,8 @@
 
 var typed = new Typed(".auto-typed", {
   strings: ["اليوم ما بحالو… على ما أظن", "Joyeux anniversaire, je te souhaite le meilleur", "متمنياتي لك النجاح والسعادة", "Je te souhaite une belle année à venir", "عام جديد، فرصة جديدة، بالتوفيق هدى"],
-  typeSpeed: 50,
-  backSpeed: 50,
+  typeSpeed: 20,
+  backSpeed: 20,
   loop: true
 });
 
@@ -197,7 +197,7 @@ btnPage4.addEventListener("click", function () {
 let playing = false;
 
 function audioPlay() {
-  if (playing) return; // يمنع التشغيل المتكرر
+  if (playing) return; 
 
   const audio = new Audio('../audio/birthdayArabic.mp3');
   playing = true;
@@ -330,9 +330,7 @@ setInterval(() => {
   }
 }, 500);
 
-fetch('pages/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);
+
 
 
 

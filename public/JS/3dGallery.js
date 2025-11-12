@@ -10,7 +10,7 @@ const overlay = document.querySelector('.overlay');
 const previewImg = document.getElementById('preview-img');
 const previewVideo = document.getElementById('preview-video');
 
-// === Drag start
+
 box.addEventListener('mousedown', (e) => {
   isDragging = true;
   startX = e.clientX;
@@ -29,7 +29,7 @@ box.addEventListener('mouseleave', () => {
   box.style.cursor = 'grab';
 });
 
-// === Drag move
+
 box.addEventListener('mousemove', (e) => {
   if(!isDragging) return;
   let diff = e.clientX - startX;
@@ -98,6 +98,3 @@ overlay.addEventListener('click', () => {
   previewVideo.pause();
 });
 
-fetch('pages/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);

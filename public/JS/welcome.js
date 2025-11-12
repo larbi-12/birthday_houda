@@ -31,30 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-let playing = false;
+// let playing = false;
 
-function audioPlay() {
-  if (playing) return; // يمنع التشغيل المتكرر
+// function audioPlay() {
+//   if (playing) return;
 
-  const audio = new Audio('../audio/Audio1.mp3');
-  playing = true;
-  audio.play();
+//   const audio = new Audio('../audio/Audio1.mp3');
+//   playing = true;
+//   audio.play();
 
-  setTimeout(() => {
-    audio.pause();
-    audio.currentTime = 0;
-    playing = false;
-  }, 40000); 
-}
+//   setTimeout(() => {
+//     audio.pause();
+//     audio.currentTime = 0;
+//     playing = false;
+//   }, 40000); 
+// }
 
 
-let finalbtn = document.querySelector(".final-btn");
+// let finalbtn = document.querySelector(".final-btn");
 
-finalbtn.addEventListener("click",function(){
-  audioPlay();
+// finalbtn.addEventListener("click",function(){
+//   audioPlay();
 
-});
+// });
 
-fetch('pages/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);

@@ -11,7 +11,7 @@ const mainImagesArray = [
 
     { src: '../images/houda3.jpg', caption: 'Look parfait' },
     { src: '../images/houda4.jpg', caption: 'Beautiful' },
-    { src: '../images/houda5.jpeg', caption: '😂واش عقلتي على هاد الفوضى؟ ' },
+    { src: '../images/houda5.jpeg', caption: '😂واش عقلتي على هاد الكارثة؟ ' },
     { src: '../images/houda6.jpg', caption: 'Simply beautiful!' },
     { src: '../images/houda0.jpg', caption: 'Brille de mille feux' },
     { src: '../images/nous1.jpeg', caption: ' ذكريات جميلة' },
@@ -63,6 +63,3 @@ thumbs.forEach((thumb) => {
 updateMainImage(currentIndex);
 
 
-fetch('pages/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);

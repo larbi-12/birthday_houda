@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,37 @@
   <link rel="stylesheet" href="../public/CSS/3dGallery.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="../public/CSS/navbar.css">
-  <link rel="icon"  href="../images/3dgallery.png">
+  <link rel="icon" href="../images/3dgallery.png">
 </head>
+
 <body>
 
-    <div id="navbar"></div>
-    
+  <!-- <navbar start -->
+
+  <div id="navbar">
+    <nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"> </i> Home</a></li>
+        <li><a href="birthday2.html"><i class="fas fa-clock"></i> Timeline</a></li>
+        <li><a href="birthday1.html"><i class="fa-solid fa-gift"></i> Cart</a></li>
+
+        <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="wishes.html"><i class="fas fa-heart"></i> Wishes</a></li>
+        <li><a href="welcome.html"><i class="fas fa-highlighter"></i> Box</a></li>
+        <li><a href="3dGallery.html"><i class="fas fa-highlighter"></i> Souvenirs</a></li>
+        <li><a href="typing.html"><i class="fas fa-comment"></i> Message</a></li>
+        <li><a href="opinion.html"><i class="fas fa-comment"></i> opinion</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+  <!-- navbar end -->
+
   <div class="box">
-    
+
     <!-- Images -->
     <span style="--i:1;" data-type="image"><img src="../images/houda4.jpg" alt=""></span>
     <span style="--i:2;" data-type="image"><img src="../images/houda1.jpeg" alt=""></span>
@@ -23,7 +47,7 @@
     <span style="--i:3;" data-type="video" data-src="../videos/video-me.mp4">
       <img src="../images/video1.jpeg" alt="">
       <i class="fa-solid fa-play"></i>
-      
+
     </span>
     <span style="--i:18;" data-type="video" data-src="../videos/video2.mp4">
       <img src="../images/video2.jpeg" alt="">
@@ -41,7 +65,7 @@
 
 
     <!-- More images -->
-     <span style="--i:8;" data-type="image"><img src="../images/nous1.jpeg" alt=""></span>
+    <span style="--i:8;" data-type="image"><img src="../images/nous1.jpeg" alt=""></span>
     <span style="--i:4;" data-type="image"><img src="../images/houda5.jpeg" alt=""></span>
     <span style="--i:5;" data-type="image"><img src="../images/houda4.jpg" alt=""></span>
     <span style="--i:6;" data-type="image"><img src="../images/houda3.jpg" alt=""></span>
@@ -57,7 +81,7 @@
     <span style="--i:16;" data-type="image"><img src="../images/nous8.jpg" alt=""></span>
     <span style="--i:17;" data-type="image"><img src="../images/nous9.jpg" alt=""></span>
     <span style="--i:21;" data-type="image"><img src="../images/houda0.jpg" alt=""></span>
-    
+
   </div>
 
   <!-- Carousel Buttons -->
@@ -65,13 +89,14 @@
     <div class="btn left"><i class="fa-solid fa-arrow-left"></i></div>
     <div class="btn right"><i class="fa-solid fa-arrow-right"></i></div>
   </div>
-<!-- Overlay -->
-<div class="overlay">
-  <img id="preview-img" alt="">
-  <video id="preview-video" controls></video>
-</div>
+  <!-- Overlay -->
+  <div class="overlay">
+    <img id="preview-img" alt="">
+    <video id="preview-video" controls></video>
+  </div>
 
   <script src="../public/JS/3dGallery.js"></script>
   <script src="../public/JS/navbar.js"></script>
 </body>
+
 </html>
