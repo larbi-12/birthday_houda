@@ -379,6 +379,16 @@
 
 
 
+        .my-name{
+            display: flex;
+            justify-content: end;
+            padding-right: 80px;
+            padding-top: 30px;
+            
+            
+        
+        }
+
 
         
         /* ===== RESPONSIVE DESIGN ===== */
