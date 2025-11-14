@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/pages/index.html"
+    },
+    {
+      "src": "/CSS/(.*)",
+      "dest": "/public/CSS/$1"
+    },
+    {
+      "src": "/JS/(.*)", 
+      "dest": "/public/JS/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/pages/$1"
+    }
+  ]
+}
