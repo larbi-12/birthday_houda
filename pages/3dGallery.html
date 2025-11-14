@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Gallery</title>
+  <title>3D Gallery - Souvenirs</title>
   <link rel="stylesheet" href="../public/CSS/3dGallery.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="../public/CSS/navbar.css">
@@ -13,8 +13,7 @@
 
 <body>
 
-  <!-- <navbar start -->
-
+  <!-- navbar start -->
   <div id="navbar">
     <nav>
       <div class="hamburger" id="hamburger">&#9776;</div>
@@ -22,66 +21,57 @@
         <li><a href="index.html"><i class="fas fa-home"> </i> Home</a></li>
         <li><a href="birthday2.html"><i class="fas fa-clock"></i> Timeline</a></li>
         <li><a href="birthday1.html"><i class="fa-solid fa-gift"></i> Cart</a></li>
-
         <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
         <li><a href="wishes.html"><i class="fas fa-heart"></i> Wishes</a></li>
         <li><a href="welcome.html"><i class="fas fa-highlighter"></i> Box</a></li>
         <li><a href="3dGallery.html"><i class="fas fa-highlighter"></i> Souvenirs</a></li>
         <li><a href="typing.html"><i class="fas fa-comment"></i> Message</a></li>
-        <li><a href="opinion.html"><i class="fas fa-comment"></i> opinion</a></li>
+        <li><a href="opinion.html"><i class="fas fa-comment"></i> Opinion</a></li>
       </ul>
     </nav>
   </div>
-
-
-
   <!-- navbar end -->
 
   <div class="box">
+    <!-- Images - Ordonnées séquentiellement -->
+    <span style="--i:1;" data-type="image"><img src="../images/houda4.jpg" alt="Photo de Houda"></span>
+    <span style="--i:2;" data-type="image"><img src="../images/houda1.jpeg" alt="Photo de Houda"></span>
+    <span style="--i:3;" data-type="image"><img src="../images/houda5.jpeg" alt="Photo de Houda"></span>
+    <span style="--i:4;" data-type="image"><img src="../images/houda3.jpg" alt="Photo de Houda"></span>
+    <span style="--i:5;" data-type="image"><img src="../images/houda2.jpg" alt="Photo de Houda"></span>
+    <span style="--i:6;" data-type="image"><img src="../images/houda6.jpg" alt="Photo de Houda"></span>
+    <span style="--i:7;" data-type="image"><img src="../images/houda0.jpg" alt="Photo de Houda"></span>
+    
+    <!-- Photos ensemble -->
+    <span style="--i:8;" data-type="image"><img src="../images/nous1.jpeg" alt="Nous deux"></span>
+    <span style="--i:9;" data-type="image"><img src="../images/nous2.jpg" alt="Nous deux"></span>
+    <span style="--i:10;" data-type="image"><img src="../images/nous3.jpg" alt="Nous deux"></span>
+    <span style="--i:11;" data-type="image"><img src="../images/nous4.jpg" alt="Nous deux"></span>
+    <span style="--i:12;" data-type="image"><img src="../images/nous5.jpg" alt="Nous deux"></span>
+    <span style="--i:13;" data-type="image"><img src="../images/nous6.jpg" alt="Nous deux"></span>
+    <span style="--i:14;" data-type="image"><img src="../images/nous7.jpg" alt="Nous deux"></span>
+    <span style="--i:15;" data-type="image"><img src="../images/nous8.jpg" alt="Nous deux"></span>
+    <span style="--i:16;" data-type="image"><img src="../images/nous9.jpg" alt="Nous deux"></span>
 
-    <!-- Images -->
-    <span style="--i:1;" data-type="image"><img src="../images/houda4.jpg" alt=""></span>
-    <span style="--i:2;" data-type="image"><img src="../images/houda1.jpeg" alt=""></span>
-
-    <!-- Video -->
-    <span style="--i:3;" data-type="video" data-src="../videos/video-me.mp4">
-      <img src="../images/video1.jpeg" alt="">
-      <i class="fa-solid fa-play"></i>
-
+    <!-- Vidéos - à la fin avec numéros séquentiels -->
+    <span style="--i:17;" data-type="video" data-src="../videos/video-me.mp4">
+      <img src="../images/video1.jpeg" alt="Vidéo 1">
+      <i class="fa-solid fa-play play-icon"></i>
     </span>
+    
     <span style="--i:18;" data-type="video" data-src="../videos/video2.mp4">
-      <img src="../images/video2.jpeg" alt="">
-      <i class="fa-solid fa-play"></i>
+      <img src="../images/video2.jpeg" alt="Vidéo 2">
+      <i class="fa-solid fa-play play-icon"></i>
     </span>
+    
     <span style="--i:19;" data-type="video" data-src="../videos/video3.mp4">
-      <img src="../images/video3.jpeg" alt="">
-      <i class="fa-solid fa-play"></i>
-    </span>
-    <span style="--i:20;" data-type="video" data-src="../videos/video4.mp4">
-      <img src="../images/video4.jpeg" alt="">
-      <i class="fa-solid fa-play"></i>
+      <img src="../images/video3.jpeg" alt="Vidéo 3" class="video3">
+      <i class="fa-solid fa-play play-icon"></i>
     </span>
 
-
-
-    <!-- More images -->
-    <span style="--i:8;" data-type="image"><img src="../images/nous1.jpeg" alt=""></span>
-    <span style="--i:4;" data-type="image"><img src="../images/houda5.jpeg" alt=""></span>
-    <span style="--i:5;" data-type="image"><img src="../images/houda4.jpg" alt=""></span>
-    <span style="--i:6;" data-type="image"><img src="../images/houda3.jpg" alt=""></span>
-    <span style="--i:7;" data-type="image"><img src="../images/houda1.jpeg" alt=""></span>
-    <span style="--i:8;" data-type="image"><img src="../images/houda2.jpg" alt=""></span>
-    <span style="--i:9;" data-type="image"><img src="../images/houda6.jpg" alt=""></span>
-    <span style="--i:10;" data-type="image"><img src="../images/nous2.jpg" alt=""></span>
-    <span style="--i:11;" data-type="image"><img src="../images/nous3.jpg" alt=""></span>
-    <span style="--i:12;" data-type="image"><img src="../images/nous4.jpg" alt=""></span>
-    <span style="--i:13;" data-type="image"><img src="../images/nous5.jpg" alt=""></span>
-    <span style="--i:14;" data-type="image"><img src="../images/nous6.jpg" alt=""></span>
-    <span style="--i:15;" data-type="image"><img src="../images/nous7.jpg" alt=""></span>
-    <span style="--i:16;" data-type="image"><img src="../images/nous8.jpg" alt=""></span>
-    <span style="--i:17;" data-type="image"><img src="../images/nous9.jpg" alt=""></span>
-    <span style="--i:21;" data-type="image"><img src="../images/houda0.jpg" alt=""></span>
-
+    <!-- Deux éléments supplémentaires pour compléter le cercle -->
+    <span style="--i:20;" data-type="image"><img src="../images/houda4.jpg" alt="Photo supplémentaire"></span>
+    <span style="--i:21;" data-type="image"><img src="../images/houda1.jpeg" alt="Photo supplémentaire"></span>
   </div>
 
   <!-- Carousel Buttons -->
@@ -89,10 +79,16 @@
     <div class="btn left"><i class="fa-solid fa-arrow-left"></i></div>
     <div class="btn right"><i class="fa-solid fa-arrow-right"></i></div>
   </div>
-  <!-- Overlay -->
+
+  <!-- Overlay pour l'affichage des médias -->
   <div class="overlay">
-    <img id="preview-img" alt="">
-    <video id="preview-video" controls></video>
+    <img id="preview-img" alt="Aperçu image">
+    <video id="preview-video" controls>
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+    <div class="close-btn">
+      <i class="fas fa-times"></i>
+    </div>
   </div>
 
   <script src="../public/JS/3dGallery.js"></script>

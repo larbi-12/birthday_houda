@@ -396,17 +396,23 @@
 @media (max-width: 768px) {
     .container {
         flex-direction: column; 
+    
     }
 
     .content-img {
         order: -1; 
+        margin-top: 60px;
     }
+   #birthdayCard{
+    width: 100vw;
+   }
 
     .photo-frame {
         width: 250px;
         height: 250px;
         margin-bottom: 20px; 
     }
+  
 
     .content-text h2 {
         font-size: 2rem;

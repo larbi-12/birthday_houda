@@ -2,11 +2,11 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Opinion</title>
-    <link rel="stylesheet" href="../public/CSS/opinion.css">
-    <link rel="stylesheet" href="../public/CSS/navbar.css">
-    <link rel="icon"  href="../images/opinion.png">
+  <meta charset="UTF-8">
+  <title>Opinion</title>
+  <link rel="stylesheet" href="../public/CSS/opinion.css">
+  <link rel="stylesheet" href="../public/CSS/navbar.css">
+  <link rel="icon" href="../images/opinion.png">
 
 
 
@@ -14,45 +14,50 @@
 </head>
 
 <body>
-    <div id="navbar">
-  <nav>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" >
-      <li><a href="index.html" ><i class="fas fa-home" > </i> Home</a></li>
-      <li><a href="birthday2.html"><i class="fas fa-clock"></i> Timeline</a></li>
-      <li><a href="birthday1.html"><i class="fa-solid fa-gift"></i> Cart</a></li>
-      
-      <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
-      <li><a href="wishes.html"><i class="fas fa-heart"></i> Wishes</a></li>
-      <li><a href="welcome.html"><i class="fas fa-highlighter"></i> Box</a></li>
-      <li><a href="3dGallery.html"><i class="fas fa-highlighter"></i> Souvenirs</a></li>
-      <li><a href="typing.html"><i class="fas fa-comment"></i> Message</a></li>
-      <li><a href="opinion.html"><i class="fas fa-comment"></i> opinion</a></li>
-    </ul>
-  </nav>
-</div>
+  <div id="navbar">
+    <nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"> </i> Home</a></li>
+        <li><a href="birthday2.html"><i class="fas fa-clock"></i> Timeline</a></li>
+        <li><a href="birthday1.html"><i class="fa-solid fa-gift"></i> Cart</a></li>
 
-    <div class="container">
-        <div class="title">
-            <h2> كيف جاك هادشي قولي ليا رأيك بصراحة</h2>
-        </div>
+        <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="wishes.html"><i class="fas fa-heart"></i> Wishes</a></li>
+        <li><a href="welcome.html"><i class="fas fa-highlighter"></i> Box</a></li>
+        <li><a href="3dGallery.html"><i class="fas fa-highlighter"></i> Souvenirs</a></li>
+        <li><a href="typing.html"><i class="fas fa-comment"></i> Message</a></li>
+        <li><a href="opinion.html"><i class="fas fa-comment"></i> opinion</a></li>
+      </ul>
+    </nav>
+  </div>
 
-
-<form action="https://formsubmit.co/larbi.louad.el@gmail.com" method="POST">
-     <input type="text" name="name" placeholder="Entrez Votre Prénom" required>
-     <input type="email" name="email" placeholder="Entrez votre email correct" required>
-     <textarea id="userInput" type="text" name="name"  placeholder="Écrivez quelque chose..." required></textarea>
-        <button id="saveBtn" type="submit" disabled>Enregistrer</button>
-        <p id="msg"></p>
-</form>
-
-        
-
+  <div class="container">
+    <div class="title">
+      <h2> كيف جاك هادشي قولي ليا رأيك بصراحة</h2>
     </div>
-    <script src="../public/JS/opinion.js"></script>
-    <script src="../public/JS/navbar.js"></script>
 
-    
+
+    <form action="https://formsubmit.co/larbi.louad.el@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Entrez Votre Prénom" required>
+      <input type="email" name="email" placeholder="Entrez votre email correct" required>
+      <textarea id="userInput" type="text" name="name" placeholder="Écrivez quelque chose..." required></textarea>
+      <button id="saveBtn" type="submit" disabled>Enregistrer</button>
+      <p id="msg"></p>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5502/pages/thanks.html">
+
+
+    </form>
+
+
+
+  </div>
+  <script src="../public/JS/opinion.js"></script>
+  <script src="../public/JS/navbar.js"></script>
+
+
 </body>
 
 </html>

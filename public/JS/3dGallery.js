@@ -98,3 +98,49 @@ overlay.addEventListener('click', () => {
   previewVideo.pause();
 });
 
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    const type = item.dataset.type;
+
+    if(type === 'image'){
+      previewVideo.pause();
+      previewVideo.classList.remove('active');
+      previewImg.src = item.querySelector('img').src;
+      previewImg.classList.add('active');
+    } else if(type === 'video'){
+      previewImg.classList.remove('active');
+      previewVideo.src = item.dataset.src;
+      previewVideo.classList.add('active');
+      previewVideo.currentTime = 0; // remettre au début
+      previewVideo.play();
+
+      // Vérifier si c'est la vidéo 2
+      if(item.dataset.src.includes('video2.mp4')){
+        const maxTime = 90; // 90 secondes
+
+        // S'assurer que la vidéo ne dépasse jamais 90s
+        const limitVideo = () => {
+          if(previewVideo.currentTime >= maxTime){
+            previewVideo.pause();
+            previewVideo.currentTime = 0; // retourne au début si clique sur play
+          }
+        };
+
+        previewVideo.addEventListener('timeupdate', limitVideo);
+        previewVideo.addEventListener('play', () => {
+          if(previewVideo.currentTime >= maxTime){
+            previewVideo.pause();
+            previewVideo.currentTime = 0; // reset si on essaye de relancer
+          }
+        });
+      }
+    }
+
+    overlay.classList.add('active');
+  });
+});
+
+
+
+
+

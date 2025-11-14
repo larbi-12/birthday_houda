@@ -176,18 +176,19 @@ body {
 .frames:nth-child(1) {
     top: -140px;
     z-index: -1;
-    background-color: coral;
+    background-color: rgb(244, 150, 238);
 }
 
 .frames:nth-child(2) {
-    background-color: goldenrod;
+    background-color: rgb(240, 192, 226);
 }
 
 
 
 .frames:nth-child(3) {
     top: 130px;
-    background-color: burlywood;
+    background-color: rgb(210, 174, 209);
+    box-shadow: 0 5px 1.2rem pink;
 
 }
 

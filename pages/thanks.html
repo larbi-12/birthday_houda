@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Merci pour votre message</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg1: #ff9a9e;
+            --bg2: #fad0c4;
+            --accent: #6b5b95;
+            --accent-light: #8a7bb0;
+            --accent-dark: #52467c;
+            --muted: #444;
+            --success: #4CAF50;
+            --white: #ffffff;
+            --black: #111111;
+            --card-bg-light: rgba(255, 255, 255, 0.92);
+            --card-bg-dark: rgba(20, 20, 20, 0.92);
+            --shadow-light: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+            -webkit-font-smoothing: antialiased;
+            color: var(--muted);
+            position: relative;
+        }
+
+        /* Particules animées en arrière-plan */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .card {
+            background: var(--card-bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            max-width: 560px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: cardAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes cardAppear {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .icon-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            box-shadow: 0 4px 20px rgba(107, 91, 149, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(107, 91, 149, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(107, 91, 149, 0.4);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(107, 91, 149, 0.3);
+            }
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .checkmark {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw 1s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: 2.2rem;
+            color: var(--accent);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0 0 28px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(107, 91, 149, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(107, 91, 149, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+        }
+
+        .small {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .countdown {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 20px;
+            display: inline-block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(107, 91, 149, 0.2);
+            border-radius: 2px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            width: 0%;
+            border-radius: 2px;
+            transition: width 1s linear;
+        }
+
+        /* Mode sombre */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2b2b2b, #111);
+            }
+            
+            .card {
+                background: var(--card-bg-dark);
+                color: #ddd;
+                box-shadow: var(--shadow-dark);
+            }
+            
+            p {
+                color: #bbb;
+            }
+            
+            .small {
+                color: #aaa;
+            }
+            
+            .particle {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 24px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .icon-container {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <main class="card" role="main" aria-labelledby="thanks-title">
+        <div class="icon-container">
+            <div class="icon-circle"></div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" fill="#fff" opacity="0.06"/>
+                <path class="checkmark" d="M9 12.5l2 2 4-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <h1 id="thanks-title">Merci pour votre message&nbsp;!</h1>
+        <p>Votre message a bien été reçu. Nous vous répondrons dans les plus brefs délais.</p>
+
+        <a class="btn" href="opinion.html">Retour à l'accueil</a>
+
+        <div class="small">
+            Vous serez redirigé dans <span id="count" class="countdown">6</span>s…
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+    </main>
+
+    <script>
+        // Création des particules animées
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Taille aléatoire
+                const size = Math.random() * 60 + 10;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Position initiale aléatoire
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.bottom = `-${size}px`;
+                
+                // Délai d'animation aléatoire
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                // Durée d'animation aléatoire
+                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Compte à rebours et redirection
+        function startCountdown() {
+            let timeLeft = 6;
+            const countElement = document.getElementById('count');
+            const progressElement = document.getElementById('progress');
+            
+            const timer = setInterval(() => {
+                timeLeft--;
+                if (countElement) countElement.textContent = timeLeft;
+                if (progressElement) progressElement.style.width = `${(6 - timeLeft) / 6 * 100}%`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'opinion.html';
+                }
+            }, 1000);
+        }
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            startCountdown();
+        });
+    </script>
+</body>
+</html>
