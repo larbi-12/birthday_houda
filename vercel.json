@@ -1,4 +1,11 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "pages/index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
       "src": "/",
@@ -9,7 +16,7 @@
       "dest": "/public/CSS/$1"
     },
     {
-      "src": "/JS/(.*)", 
+      "src": "/JS/(.*)",
       "dest": "/public/JS/$1"
     },
     {
@@ -17,8 +24,12 @@
       "dest": "/images/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*\\.html)",
       "dest": "/pages/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/pages/index.html"
     }
   ]
 }

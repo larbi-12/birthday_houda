@@ -1,71 +1,121 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyeux Anniversaire Houda</title>
-    <link rel="stylesheet" href="../public/CSS/style.css">
-    <link rel="stylesheet" href="../public/CSS/navbar.css">
-        <link rel="icon"  href="../public/images/index.png">
-
-
-
-</head>
-<body>
-
-    <div id="navbar">
-  <nav>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" >
-      <li><a href="index.html" ><i class="fas fa-home" > </i> Home</a></li>
-      <li><a href="birthday2.html"><i class="fas fa-clock"></i> Timeline</a></li>
-      <li><a href="birthday1.html"><i class="fa-solid fa-gift"></i> Cart</a></li>
-      
-      <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
-      <li><a href="wishes.html"><i class="fas fa-heart"></i> Wishes</a></li>
-      <li><a href="welcome.html"><i class="fas fa-highlighter"></i> Box</a></li>
-      <li><a href="3dGallery.html"><i class="fas fa-highlighter"></i> Souvenirs</a></li>
-      <li><a href="typing.html"><i class="fas fa-comment"></i> Message</a></li>
-      <li><a href="opinion.html"><i class="fas fa-comment"></i> opinion</a></li>
-    </ul>
-  </nav>
-</div>
-    <div class="floating-hearts" id="heartsContainer"></div>
+    <title>Birthday page</title>
     
-    <div class="container">
-        <div class="content-text">
-            <h2>Joyeux Anniversaire Houda!</h2>
-            <p>Nous te souhaitons une journée magique remplie de moments précieux, de rires contagieux et de bonheur infini. Que cette nouvelle année de vie t'apporte tout ce que tu désires et plus encore.</p>
-            <button id="btn">Ouvrir le message</button>
-            <audio id="myAudio" controls loop style="display: none;">
-                <source src="../audio/birthdayFrensh.mp3" type="audio/mpeg">
-                Votre navigateur ne supporte pas l'élément audio.
-            </audio>
-        </div>
+    <!-- CHEMINS CORRIGÉS pour la racine -->
+    <link rel="stylesheet" href="public/CSS/birthday2.css">
+    <link rel="stylesheet" href="public/CSS/navbar.css">
+    <link rel="icon" href="images/birthday.png">
 
-        <div class="content-img">
-            <div class="photo-frame">
-                <img src="../images/houda1.jpeg" alt="Photo d'Houda">
+    <!-- CDN restent identiques -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="page">
+        <!-- Votre contenu existant -->
+        <div class="left-page">
+            <div class="container">
+                <div class="left-text">
+                    <div class="title">
+                        <h1>Happy </h1>
+                        <span>Birthday</span>
+                    </div>
+                    <div class="btn btn-date">
+                        <a href="">15 November 2002</a>
+                    </div>
+                    <div class="mail">
+                        <a href="">Cliquer içi Houda</a> 
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="box-card hide" id="birthdayCard">
-            <div class="content-card">
-                <h2>Happy Birthday Houda</h2>
-                <div class="message-content">
-                    <p>Chère Houda,</p>
-                    <p>En ce jour si spécial, je tenais à te dire à quel point tu es une personne merveilleuse. Ton sourire illumine les journées et ton cœur généreux rend le monde meilleur.</p>
-                    <p>Je te souhaite une année exceptionnelle, remplie de réussites, de belles rencontres et de moments inoubliables. Que chacun de tes rêves se réalise et que le bonheur t'accompagne chaque jour.</p>
-                    <p>Avec toute mon affection,</p>
-                    <p><strong>Larbi</strong></p>
+        <div class="right-page">
+            <div class="container">
+                <div class="right">
+                    <div class="img-page">
+                        <!-- CHEMIN CORRIGÉ -->
+                        <img src="images/houda2.jpg" alt="">
+                    </div>
+                    <div class="btn btn-underimage">
+                        <a href="">Chère Houda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boxMail">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <!-- CHEMIN CORRIGÉ -->
+                        <img src="images/houda2.jpg" alt="">
+                    </div>
+                    <h4 class="username">To: Houda 💖<span class="underline"></span></h4>
+                    <h3>Happy Birthday 23 years old Houda</h3>
+                </div>
+                <div class="card2">
+                    <!-- Votre message -->
                 </div>
             </div>
         </div>
     </div>
 
-</script>
-    <script src="../public/JS/navbar.js"></script>
-    <script src="../public/JS/script.js"></script>
-    
+    <script>
+        // Votre code JavaScript
+        let mailBox = document.querySelector('.mail a');
+        let boxMail = document.querySelector('.boxMail');
+        let closeBtn = boxMail.querySelector('.fa-xmark');
+
+        mailBox.addEventListener('click', function(e) {
+            e.preventDefault();
+            mailBox.parentElement.classList.toggle('active');
+            boxMail.classList.add('active');
+            
+            let card1 = boxMail.querySelector('.card1');
+            let card2 = boxMail.querySelector('.card2');
+            
+            card1.classList.add('fadeIn');
+            setTimeout(() => {
+                card2.classList.add('fadeIn');
+            }, 500);
+        });
+
+        closeBtn.addEventListener('click', function() {
+            boxMail.classList.remove('active');
+            let card1 = boxMail.querySelector('.card1');
+            let card2 = boxMail.querySelector('.card2');
+            card1.classList.remove('fadeIn');
+            card2.classList.remove('fadeIn');
+            mailBox.parentElement.classList.remove('active');
+        });
+
+        // CHEMIN CORRIGÉ pour navbar.html
+        fetch('pages/navbar.html')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.text();
+            })
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+            });
+    </script>
+
+    <!-- CHEMIN CORRIGÉ pour navbar.js -->
+    <script src="public/JS/navbar.js"></script>
 </body>
 </html>
